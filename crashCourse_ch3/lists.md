@@ -140,7 +140,7 @@ for x in guest_list:
 ```
 import math
 
-guest_list = ["Babou", "Jane", "Lana", "Sterling"]
+guest_list = ["Babou", "Mallory", "Lana", "Sterling"]
 guest_list.insert(0, 'Dr.Krieger')
 
 middleIndex = math.ceil((len(guest_list))/2)
@@ -154,3 +154,12 @@ for x in guest_list:
 ```
 
 ## 3-7 Shrinking Guest List
+```
+guest_list = ["Babou", "Cheryl", "Lana", "Sterling"]
+
+for x in guest_list:
+  print(guest_list.pop())
+
+
+
+```
