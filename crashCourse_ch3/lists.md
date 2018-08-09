@@ -157,9 +157,16 @@ for x in guest_list:
 ```
 guest_list = ["Babou", "Cheryl", "Lana", "Sterling"]
 
+i = len(guest_list)
+while i > 2:
+  print("Sorry " + guest_list.pop())
+  i -= 1
+
 for x in guest_list:
-  print(guest_list.pop())
+  print("Still invited " + x)
 
+del guest_list[0]
+del guest_list[0]
 
-
+print(guest_list)
 ```
