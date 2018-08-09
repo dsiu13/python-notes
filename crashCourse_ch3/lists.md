@@ -165,8 +165,35 @@ while i > 2:
 for x in guest_list:
   print("Still invited " + x)
 
+
 del guest_list[0]
 del guest_list[0]
 
 print(guest_list)
 ```
+
+# Organizing a List
+
+## Sorting a List Permanently with Sort()
+- Sort() changes the order permanently, and we can never revert to the original order
+```
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+cars.sort()
+print(cars) -> ['audi', 'bmw', 'subaru', 'toyota']
+
+```
+- if you pass reverse true -> sort(reverse=true), you can sort in reverse alphabetical order
+
+## Sorted(), Temporarily sorting
+- Sorted() lets you change the order of a list, but does not change the actual order of the list
+
+## Reverse()
+- reverses the order of the list.
+```
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+cars.reverse()
+```
+
+## len()
+- grabs the length of the list
+- len(cars)
