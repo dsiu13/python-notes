@@ -257,6 +257,14 @@ else:
 ## 5-10 Checking Usernames
 ```
 current_users = ['jeff', 'annie', 'abed', 'britta']
-new_users = ['hinkie', 'leeroy', 'frankie']
+new_users = ['hinkie', 'leeroy', 'frankie', 'jeff']
+
+for new_user in new_users:
+  if new_user.lower() in current_users:
+    print('User name ' + new_user + ' is taken')
+  else:
+    print('welcome ' + new_user)
 
 ```
+
+## 5-11 Ordinal Numbers
