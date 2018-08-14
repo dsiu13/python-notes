@@ -282,25 +282,28 @@ users = {
 
 ## 6-7 People
 ```
-
-
 greendale_students = {
-  jwinger = {
+  'jwinger': {
     'first': 'jeff',
     'last': 'winger',
     'job': 'law prof'
   },
-  aedison = {
+  'aedison': {
     'first': 'annie',
     'last': 'edison',
     'job': 'fbi agent'
   },
-  tbarnes = {
+  'tbarnes': {
     'first': 'troy',
     'last': 'barnes',
     'job': 'captain'
   }
 }
+
+for student, student_info in greendale_students.items():
+  full_name = student_info['first'] + " " + student_info['last']
+  job = student_info['job']
+  print('id ' + student + " " + full_name + " " + job)
 
 ```
 
