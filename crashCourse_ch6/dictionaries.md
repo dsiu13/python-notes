@@ -91,4 +91,107 @@ for key, value in fav_nums.items():
   print(key + ' favorite number is ' + str(value))
 ```
 
+## 6-3 Glossary
+```
+glossary = {
+  'one': 'monday',
+  'two': 'tuesday',
+  'three': 'wednesday',
+  'four': 'thursday',
+  'five': 'friday'
+}
+
+for key, value in glossary.items():
+  print(key + ': ' + value)
+```
+
+
 ## Looping through all Key-Value Pairs
+- looping through keys is the default behavior when going through a dictionary
+- you can use keys() method if it makes your code easier to read
+- you can access value associated with any key you care about inside the loop by using the current key
+- The key() method returns a list of all keys
+```
+for name in favorite_languages.keys():
+  print(name.title())
+
+for name in favorite_languages:
+```
+
+## Grabbing values by key
+```
+fav_language = {
+  'jen': 'java',
+  'sarah': 'c',
+  'ed': 'javascript',
+  'phil': 'python'
+}
+
+
+friends = ['phil', 'sarah']
+
+for name in favorite_languages.keys():
+  print(name.title())
+
+  if name in friends:
+    print(" Hi " + name.title() + ' you like ' + favorite_languages[name].title())
+
+```
+## Looping through a dictionary's keys in order
+- There is no predictable order from the items in a dictionary.
+- There is only a clear connection between each key and its assigned value
+- One way to get order is to use sorted()
+
+```
+favorite_languages = {
+       'jen': 'python',
+       'sarah': 'c',
+       'edward': 'ruby',
+       'phil': 'python',
+       }
+
+for name in sorted(favorite_languages.keys()):
+   print(name.title() + ", thank you for taking the poll.")
+
+```
+
+## Looping through all Values in a Dictionary
+- If you interested in the values that a dictionary contains, you can use values()
+- Values() returns a list of values without their keys
+- when you use the set() method, you pull all unique values
+```
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'c',
+    'edward': 'ruby',
+    'phil': 'python',
+    }
+
+print("The following languages have been mentioned:")
+for language in favorite_languages.values():
+    print(language.title())
+
+```
+
+## 6-4 Glossary 2
+```
+glossary = {
+  'one': 'monday',
+  'two': 'tuesday',
+  'three': 'wednesday',
+  'four': 'thursday',
+  'five': 'friday'
+}
+
+for key, value in glossary.items():
+  print(key + ': ' + value)
+
+```
+
+## 6-5 Rivers
+```
+rivers = {
+  
+}
+
+```

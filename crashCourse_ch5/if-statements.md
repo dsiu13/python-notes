@@ -273,5 +273,22 @@ nums = [1,2,3,4,5,6,7,8,9]
 
 for num in nums:
   if num == 1:
+    print('1st')
+  if num == 2:
+    print('2nd')
+  if num == 3:
+    print('3rd')
+  if num == 4:
+    print('4th')
+  if num == 5:
+    print('5th')
+  if num == 6:
+    print('6th')
+  if num == 7:
+    print('7th')
+  if num == 8:
+    print('8th')
+  if num == 9:
+    print('9th')
 
 ```
