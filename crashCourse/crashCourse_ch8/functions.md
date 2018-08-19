@@ -426,10 +426,3 @@ function_name(value_0, parameter_1='value')
 ```  
 - No more than 79 chars in a line
 - import statements at the beginning of the file
-
-
-## 8-15
-```
-
-
-```
