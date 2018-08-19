@@ -256,6 +256,45 @@ def you_are_a_wizard_harry(names):
   for name in names:
     print('auror ' + name)
 
-you_are_a_wizard_harry(wizards)
+you_are_a_wizard_harry(wizards[:])
 
+```
+
+## Passing an Arbitrary Number of Arguments
+- Python allows you to pass an arbitrary number of Args
+- the asterisk creates an empty tuple called 'arguement', and puts whatever values it receives into the tuple
+```
+def make_pizza(*toppings):
+  print(toppings)
+
+make_pizza('extra cheese', 'mushrooms', 'pepperoni')
+```
+
+## Mixing Positional and Arbitrary
+- Any arbitrary arguements must be placed last, as python matches positional and keyword arguments first
+```
+def make_pizza(size, *toppings):
+  print(size + toppings)
+
+make_pizza(16, 'extra cheese', 'mushrooms', 'pepperoni')
+
+```
+
+## Arbitrary Keywords
+- You can write functions that accept as many key-value pairs as the calling statement provides
+- You can mix positional, keyword, and arbitrary values in different ways when writing your own functions.
+```
+def build_profile(first_name, last_name, **user_info):
+  profile = {}
+  profile['first_name'] = first
+  profile['last_name'] = last
+
+  for key, value in user_info.items():
+    profile[key] = value
+  return profile
+
+user_profile = build_profile('bob', 'smith',
+location='princeton', field='econ')
+
+print(user_profile)
 ```
