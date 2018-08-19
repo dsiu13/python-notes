@@ -298,3 +298,138 @@ location='princeton', field='econ')
 
 print(user_profile)
 ```
+## 8-12 Sandwiches
+```
+def build_sandwich(*ingredients):
+  print(ingredients)
+
+build_sandwich('cheese','ham','lettuce')
+build_sandwich('cheese','ham','lettuce', 'tomato')
+build_sandwich('cheese','tuna','lettuce', 'tomato', 'jalpenos')   
+```
+
+## 8-13 User Profile
+```
+def build_profile(first_name, last_name, **user_info):
+  profile = {}
+  profile['first_name'] = first
+  profile['last_name'] = last
+
+  for key, value in user_info.items():
+    profile[key] = value
+  return profile
+
+user_profile = build_profile('jeff', 'winger',
+location='greendale', field='law')
+
+print(user_profile)
+
+```
+
+## 8-14 Cars
+```
+def build_car(manufacturer, model, **kwargs):
+  car = {}
+  car['maker'] = manufacturer
+  car['car_name'] = model
+
+  for key, value in kwargs.items():
+    car[key] = value
+
+  return car
+
+built_car = build_car('bmw', 'i3', color='grey')
+print(built_car)
+
+```
+
+## Storing Functions in Modules
+- You can store a function in a separate file called a **module** and then **import** that module into your main program
+- An **import** statement tells Python to make the code in the module available in the current file.
+- Using modules allows you to hide, reuse, or share parts of your code easier
+- Multiple ways to import a module
+
+## Importing an Entire Module
+- Importing the entire module gives you access to every function in the module
+
+### pizza.py
+```
+def make_pizza(size, *toppings):
+  print("\nMaking a " + str(size) +
+      "-inch pizza with the following toppings:")
+  for topping in toppings:
+      print("- " + topping)
+```
+
+### making_pizza.py
+```
+import pizza
+
+pizza.make_pizza(16, 'pepperoni')
+
+pizza.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+
+```
+
+## Importing Specific functions
+- from module_name import function_name
+- you can import as many functions via a comma separated list -> **from module_name import function_1, function_2, function_3**
+
+### making_pizza.py
+```
+import pizza import make_pizza
+
+pizza.make_pizza(16, 'pepperoni')
+
+```
+
+## Using 'as' to give a Function an Alias
+- If the name of a function might conflict with an existing name or if the function name is long, you can use an **Alias**
+- The import statement renames the function to the alias
+- from module_name import function_name as fn
+```
+from pizza import make_pizza as mp
+mp(16, 'pepperoni')
+
+```
+
+## Using 'as' to give a Module an Alias
+- All functions retain their original name
+- import module_name as mn
+```
+import pizza as p
+
+p.make_pizza(16, 'pepperoni')
+
+```
+
+## Importing all functions in a Module
+- Python can import every function using the asterisks operator
+- the asterisks tells python to copy every function
+- Better practice to import the desired function or functions. Or to import the entire module instead to reduce name conflicts
+```
+from pizza import *
+
+make_pizza(16, 'pepperoni')
+
+```
+
+## Styling Functions
+- Use descriptive names for functions. lower case and underscores
+- Comment your functions to explain what they do
+- no spaces after or before value assignment
+```
+def function_name(parameter_0, parameter_1='default value')
+
+function_name(value_0, parameter_1='value')
+
+```  
+- No more than 79 chars in a line
+- import statements at the beginning of the file
+
+
+## 8-15
+```
+
+
+```
