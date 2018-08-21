@@ -128,20 +128,6 @@ annie.greet_user()
 ```
 
 ## Working with Classes and Instances
-- You can modify the attributes of an instance directly or write methods that update attributes in specific ways.
-- You can modify an attribute's value in three ways.
-1. you can change the value directly through the instance
-2. set the value through the method
-3. Increment the value through a method
-
-### modifying an attribute directly
-- my_new_car.odometer_reading = 23
-- my_new_car.read_odometer()
-- This line tells Python to take the instance, find the attribute and set the value of the attribute to the new value.
-
-### modifying an attribute through a method
-
-
 ```
 class Car():
   def __init__(self, make, model, year):
@@ -159,5 +145,153 @@ class Car():
 my_new_car = Car('audi', 'a4', 2016)
 print(my_new_car.get_descript())
 my_new_car.read_odometer()
+
+```
+- You can modify the attributes of an instance directly or write methods that update attributes in specific ways.
+- You can modify an attribute's value in three ways.
+1. you can change the value directly through the instance
+2. set the value through the method
+3. Increment the value through a method
+
+### modifying an attribute directly
+- my_new_car.odometer_reading = 23
+- my_new_car.read_odometer()
+- This line tells Python to take the instance, find the attribute and set the value of the attribute to the new value.
+
+### modifying an attribute through a method
+```
+class Car():
+  def __init__(self, make, model, year):
+    self.make = make
+    self.model = model
+    self.year = year
+    self.odometer_reading = 0
+
+  def get_descript(self):
+    return str(self.year) + ' ' + self.make + ' ' + self.model
+
+  def read_odometer(self):
+    print("This car has " + str(self.odometer_reading) + " miles on it.")
+
+  def update_odometer(self, mileage):
+    self.odometer_reading = mileage
+
+my_new_car = Car('audi', 'a4', 2016)
+print(my_new_car.get_descript())
+
+my_new_car.update_odometer(23)
+my_new_car.read_odometer()
+
+```
+
+### Incrementing an attribute value through a Method
+```
+class Car():
+  def __init__(self, make, model, year):
+    self.make = make
+    self.model = model
+    self.year = year
+    self.odometer_reading = 0
+
+  def get_descript(self):
+    return str(self.year) + ' ' + self.make + ' ' + self.model
+
+  def read_odometer(self):
+    print("This car has " + str(self.odometer_reading) + " miles on it.")
+
+  def update_odometer(self, mileage):
+    self.odometer_reading = mileage
+
+  def increment_odometer(self, miles):
+    self.odometer_reading += miles
+
+my_used_car = Car('subaru', 'outback', 2013 print(my_used_car.get_descriptive_name())
+my_used_car.update_odometer(23500)
+my_used_car.read_odometer()
+
+```
+
+## 9-4 Restaurant
+```
+class Restaurant():
+
+  def __init__(self, restaurant_name, cuisine_type):
+    self.restaurant_name = restaurant_name
+    self.cuisine_type = cuisine_type
+    self.customers_served = 0
+
+  def describe_restaurant(self):
+    print("we are " + self.restaurant_name + " specializing in " + self.cuisine_type + " food")
+
+  def open_restaurant(self):
+    print(self.restaurant_name + " is now open")
+
+  def update_served(self, served):
+    self.customers_served = served
+
+  def restaurant_stats(self):
+    print(str(self.customers_served))
+
+  def increment_served(self, customers):
+    self.customers_served += customers
+
+
+<!-- #1 -->
+my_restaurant = Restaurant('Garden Fresh', 'Vegan')
+my_restaurant.update_served(6)
+my_restaurant.restaurant_stats()
+
+<!-- #2 -->
+my_restaurant = Restaurant('Garden Fresh', 'Vegan')
+my_restaurant.customers_served = 5
+my_restaurant.restaurant_stats()
+
+<!-- #3 -->
+my_restaurant = Restaurant('Garden Fresh', 'Vegan')
+my_restaurant.customers_served = 5
+my_restaurant.increment_served(23)
+my_restaurant.restaurant_stats()
+
+```
+
+## Inheritance
+- If the Class you are writing is a specialized version of another class you wrote, you can use Inheritance.
+- When a class inherits from another, it automatically takes on all attributes and methods of the first class
+- The original is the **parent class**. While the new class is the **child class**
+- The child class inherits methods and attributes of its parent. It can also define new methods and attributes as well
+
+## init Method for a Child Class
+- The first task Python has when creating an instance from a child class is to assign values to all attributes in the parent class
+```
+class Car():
+
+  def __init__(self, make, model, year):
+    self.make = make
+    self.model = model
+    self.year = year
+    self.odometer_reading = 0
+
+  def get_descriptive_name(self):
+    return str(self.year) + ' ' + self.make + ' ' + self.model
+
+  def read_odometer(self):
+    print(str(self.odometer_reading))
+
+  def update_odometer(self, mileage):
+    if milage >= self.odometer_reading:
+      self.odometer_reading = mileage
+    else:
+      print('nope')
+
+  def increment_odometer(self, miles):
+      self.odometer_reading += miles
+
+class ElectricCar(Car):
+
+  def __init__(self, make, model, year):
+    super().__init__(make, model, year)
+
+my_telsa = ElectricCar('Tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
 
 ```
