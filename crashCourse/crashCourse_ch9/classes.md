@@ -254,6 +254,26 @@ my_restaurant.restaurant_stats()
 
 ```
 
+## 9-5 Login Attempts
+```
+class Users():
+  def __init__(self, first_name, last_name, username):
+    self.first_name = first_name
+    self.last_name = last_name
+    self.username = username
+    self.logins = 0
+
+  def user_summary(self):
+    print(self.first_name + " " + self.last_name + " , username:" + self.username)
+
+  def greet_user(self):
+    print('Hello ' + self.first_name + "!")
+
+  def login_attempts(self):
+    self.logins += 1
+
+```
+
 ## Inheritance
 - If the Class you are writing is a specialized version of another class you wrote, you can use Inheritance.
 - When a class inherits from another, it automatically takes on all attributes and methods of the first class
@@ -373,8 +393,27 @@ class Users():
 
 class SuperUser(Users):
   def __init__(self, first_name, last_name, username):
-    super().__init__(self, first_name, last_name, username)
+      super().__init__(self)
 
 admin_user = SuperUser('jeff', 'winger', 'wingman')
 
 ```
+
+## 9-8 Privileges
+
+## 9-9 Battery Upgrade
+
+
+# Importing Classes
+- You can store as many classes as you need in a single module.
+- Importing an Entire Module -> import module_name
+- All Class -> from module_name import *
+- You can import Modules into other Modules
+
+## Importing a Single Class
+- from file import Class Name -> from car import Car
+
+## Importing Multiple Classes from a Module
+- You can import as many classes as you need into a program file.
+- If we want to make a regular car and an electric car in the same file, we need to import both classes, Car and ElectricCar
+- from car import Car, ElectricCar
