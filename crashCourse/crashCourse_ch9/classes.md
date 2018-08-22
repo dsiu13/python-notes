@@ -371,16 +371,10 @@ class Users():
   def greet_user(self):
     print('Hello ' + self.first_name + "!")
 
-class Admin(Users):
+class SuperUser(Users):
   def __init__(self, first_name, last_name, username):
     super().__init__(self, first_name, last_name, username)
-    self.privileges = ['ban', 'del', 'post']
 
-  def admin_powers(self):
-    for privilege in privileges:
-      print(privilege)
-
-my_admin = Admin('jeff','winger','wingman')
-print(my_admin)
+admin_user = SuperUser('jeff', 'winger', 'wingman')
 
 ```
