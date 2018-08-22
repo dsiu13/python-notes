@@ -272,7 +272,7 @@ class Car():
     self.odometer_reading = 0
 
   def get_descriptive_name(self):
-    return str(self.year) + ' ' + self.make + ' ' + self.model
+    print(str(self.year) + ' ' + self.make + ' ' + self.model)
 
   def read_odometer(self):
     print(str(self.odometer_reading))
@@ -292,6 +292,95 @@ class ElectricCar(Car):
     super().__init__(make, model, year)
 
 my_telsa = ElectricCar('Tesla', 'model s', 2016)
-print(my_tesla.get_descriptive_name())
+my_telsa.get_descriptive_name()
+
+```
+
+## Defining Attributes and Methods for the Child Class
+- you can add any new attributes and methods necessary to differentiate the child class from the parent class.
+- There’s no limit to how much you can specialize a child class
+```
+class ElectricCar(Car):
+
+  def __init__(self, make, model, year):
+    super().__init__(make, model, year)
+    self.battery_size = 70
+
+  def describe_battery(self):
+    print('Battery size: ' + str(self.battery_size))
+
+my_telsa = ElectricCar('Tesla', 'model s', 2016)
+my_telsa.get_descriptive_name()
+my_tesla.describe_battery()
+
+```
+
+## Overriding Methods from the Parent Class
+- You can override any method from the parent class that doesn’t fit what you’re trying to model with the child class
+- Define a method in the child class with the same name as the method you want to override.
+- Python will now ignore the parent class method, and use the child class method instead
+
+## Instances as Attributes
+- You can break your large class into smaller classes that work together.
+
+## 9-6 Ice Cream Stand
+```
+class Restaurant():
+
+  def __init__(self, restaurant_name, cuisine_type):
+    self.restaurant_name = restaurant_name
+    self.cuisine_type = cuisine_type
+    self.customers_served = 0
+
+  def describe_restaurant(self):
+    print("we are " + self.restaurant_name + " specializing in " + self.cuisine_type + " food")
+
+  def open_restaurant(self):
+    print(self.restaurant_name + " is now open")
+
+  def update_served(self, served):
+    self.customers_served = served
+
+  def restaurant_stats(self):
+    print(str(self.customers_served))
+
+  def increment_served(self, customers):
+    self.customers_served += customers
+
+class iceCreamStand(Restaurant):
+  def __init__(self, restaurant_name, cuisine_type):
+    super().__init__(self, restaurant_name, cuisine_type)
+
+  def flavors():
+    print('vanilla', 'chocolate', 'strawberry')
+
+iceCreamStand.flavors()
+```
+
+## 9-7 Admin
+```
+class Users():
+  def __init__(self, first_name, last_name, username):
+    self.first_name = first_name
+    self.last_name = last_name
+    self.username = username
+
+  def user_summary(self):
+    print(self.first_name + " " + self.last_name + " , username:" + self.username)
+
+  def greet_user(self):
+    print('Hello ' + self.first_name + "!")
+
+class Admin(Users):
+  def __init__(self, first_name, last_name, username):
+    super().__init__(self, first_name, last_name, username)
+    self.privileges = ['ban', 'del', 'post']
+
+  def admin_powers(self):
+    for privilege in privileges:
+      print(privilege)
+
+my_admin = Admin('jeff','winger','wingman')
+print(my_admin)
 
 ```
