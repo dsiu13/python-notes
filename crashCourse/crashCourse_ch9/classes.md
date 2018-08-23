@@ -377,32 +377,117 @@ class iceCreamStand(Restaurant):
 iceCreamStand.flavors()
 ```
 
-## 9-7 Admin
+## 9-7 + 9-8 Admin
 ```
-class Users():
-  def __init__(self, first_name, last_name, username):
-    self.first_name = first_name
-    self.last_name = last_name
-    self.username = username
+class User():
+    """Represent a simple user profile."""
 
-  def user_summary(self):
-    print(self.first_name + " " + self.last_name + " , username:" + self.username)
+    def __init__(self, first_name, last_name, username, email, location):
+        """Initialize the user."""
+        self.first_name = first_name.title()
+        self.last_name = last_name.title()
+        self.username = username
+        self.email = email
+        self.location = location.title()
+        self.login_attempts = 0
 
-  def greet_user(self):
-    print('Hello ' + self.first_name + "!")
+    def describe_user(self):
+        """Display a summary of the user's information."""
+        print("\n" + self.first_name + " " + self.last_name)
+        print("  Username: " + self.username)
+        print("  Email: " + self.email)
+        print("  Location: " + self.location)
 
-class SuperUser(Users):
-  def __init__(self, first_name, last_name, username):
-      super().__init__(self)
+    def greet_user(self):
+        """Display a personalized greeting to the user."""
+        print("\nWelcome back, " + self.username + "!")
 
-admin_user = SuperUser('jeff', 'winger', 'wingman')
+    def increment_login_attempts(self):
+        """Increment the value of login_attempts."""
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        """Reset login_attempts to 0."""
+        self.login_attempts = 0
+
+
+class Admin(User):
+    """A user with administrative privileges."""
+
+    def __init__(self, first_name, last_name, username, email, location):
+        """Initialize the admin."""
+        super().__init__(first_name, last_name, username, email, location)
+        self.privileges = []
+
+    def show_privileges(self):
+        """Display the privileges this administrator has."""
+        print("\nPrivileges:")
+        for privilege in self.privileges:
+            print("- " + privilege)
 
 ```
-
-## 9-8 Privileges
 
 ## 9-9 Battery Upgrade
+```
+class Car():
 
+  def __init__(self, make, model, year):
+    self.make = make
+    self.model = model
+    self.year = year
+    self.odometer_reading = 0
+
+  def get_descriptive_name(self):
+    print(str(self.year) + ' ' + self.make + ' ' + self.model)
+
+  def read_odometer(self):
+    print(str(self.odometer_reading))
+
+  def update_odometer(self, mileage):
+    if milage >= self.odometer_reading:
+      self.odometer_reading = mileage
+    else:
+      print('nope')
+
+  def increment_odometer(self, miles):
+      self.odometer_reading += miles
+
+class Battery():
+
+  def __init__(self, battery_size=60):
+      """Initialize the batteery's attributes."""
+      self.battery_size = battery_size
+
+  def describe_battery(self):
+      print("This car has a " + str(self.battery_size"-kWh battery.")
+
+
+  def get_range(self):
+      if self.battery_size == 60:
+          range = 140
+      elif self.battery_size == 85:
+          range = 185
+
+      message = "This car can go approximately " + str(range)
+      message += " miles on a full charge."
+      print(message)
+
+  def upgrade_battery(self):
+       if self.battery_size == 60:
+          self.battery_size = 85
+          print("Upgraded the battery to 85 kWh.")
+      else:
+          print("The battery is already upgraded.")
+
+class ElectricCar(Car):
+
+  def __init__(self, make, model, year):
+    super().__init__(make, model, year)
+
+my_telsa = ElectricCar('Tesla', 'model s', 2016)
+my_telsa.get_descriptive_name()
+
+```
 
 # Importing Classes
 - You can store as many classes as you need in a single module.
@@ -417,3 +502,5 @@ admin_user = SuperUser('jeff', 'winger', 'wingman')
 - You can import as many classes as you need into a program file.
 - If we want to make a regular car and an electric car in the same file, we need to import both classes, Car and ElectricCar
 - from car import Car, ElectricCar
+
+## 9-10
