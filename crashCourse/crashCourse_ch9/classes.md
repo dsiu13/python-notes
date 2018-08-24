@@ -503,4 +503,18 @@ my_telsa.get_descriptive_name()
 - If we want to make a regular car and an electric car in the same file, we need to import both classes, Car and ElectricCar
 - from car import Car, ElectricCar
 
-## 9-10
+## Standard Python Library
+- A set of modules included with every Python install
+- OrderedDict is an example of a standard Library
+- normally dictionaries don't keep track of order
+```
+from collections import OrderedDict
+
+fav_languages = OrderedDict()
+
+fav_languages['jen'] = python
+fav_languages['sarah'] = 'c'
+
+```
+
+## 9-13
