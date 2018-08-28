@@ -113,3 +113,75 @@ while True:
   else:
     print(ans)
 ```
+
+## Handling File not Found
+```
+fliename = 'alice.txt'
+
+try:
+  with open(filename) as file_object:
+    contents = file_object.read()
+except FileNotFoundError:
+  msg = "Sorry, file: " + filenane + " does not exist"
+  print(msg)
+
+```
+
+## Analyzing Text
+```
+filename = 'alice.txt'
+
+try:
+  with open(filename) as f_obj:
+    contents = f_obj.read()
+except FileNotFoundError:
+    msg = "Sorry, file: " + filenane + " does not exist"
+    print(msg)
+else:
+    words = contents.split()
+    num_words = len(words)
+    print(str(num_words)
+```
+
+## Working with Multiple Files
+- define a function, and pass it a list of files we want to work with
+```
+def count_words(filename):
+  try:
+    with open(filename) as f_obj:
+      contents = f_obj.read()
+  except FileNotFoundError:
+      msg = "Sorry, file: " + filenane + " does not exist"
+      print(msg)
+  else:
+      words = contents.split()
+      num_words = len(words)
+      print(str(num_words)
+
+filename = ['alice.txt', 'siddhartha.txt', 'moby_dick.txt', 'little_women.txt']
+
+for filename in filenames:
+  count_words(filename)
+```
+
+## Ignoring Errors/Failing Silently
+- **pass** tells Python to do nothing in the except block, no error will be thrown in the example below -> trackback
+```
+def count_words(filename):
+  try:
+    with open(filename) as f_obj:
+      contents = f_obj.read()
+  except FileNotFoundError:
+    pass
+  else:
+      words = contents.split()
+      num_words = len(words)
+      print(str(num_words)
+
+filename = ['alice.txt', 'siddhartha.txt', 'moby_dick.txt', 'little_women.txt']
+
+for filename in filenames:
+  count_words(filename)
+```
+
+## Deciding Which Errors to Report
