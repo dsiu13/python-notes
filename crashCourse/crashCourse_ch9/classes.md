@@ -516,5 +516,3 @@ fav_languages['jen'] = python
 fav_languages['sarah'] = 'c'
 
 ```
-
-## 9-13
