@@ -166,6 +166,7 @@ for filename in filenames:
 
 ## Ignoring Errors/Failing Silently
 - **pass** tells Python to do nothing in the except block, no error will be thrown in the example below -> trackback
+- The **pass** statement also acts as a placeholder. It’s a reminder that you’re choosing to do nothing at a specific point in your program’s execution and that you might want to do something there later.
 ```
 def count_words(filename):
   try:
