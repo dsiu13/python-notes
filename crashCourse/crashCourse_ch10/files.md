@@ -185,4 +185,31 @@ for filename in filenames:
   count_words(filename)
 ```
 
-## Deciding Which Errors to Report
+## Storing Data
+- Using the **json module** to store data
+- The json module allows you to dump simple Python data structures into a file and load the data from that file the next time the program runs. You can also use json to share data between different Python programs.
+- JSON can also be used in other languages
+
+## json.dump() & json.load()
+- The json.dump() function takes two arguments: a piece of data to store and a file object it can use to store the data.  
+```
+import json
+numbers = [2, 3, 5, 7, 11, 13]
+
+filename = 'numbers.json'
+with open(filename, 'w') as f_obj:
+  json.dump(numbers, f_obj)
+
+```
+
+## Saving User Generated Data
+```
+import json
+
+username = input('whats your name ')
+filename = 'username.json'
+
+with open(username, "w") as f_obj:
+  json.dump(username, f_obj)
+  print("welcome back " + username)
+```
