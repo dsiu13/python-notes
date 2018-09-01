@@ -9,5 +9,4 @@ def reading():
     for line in lines:
         line.lower().count('the')
 
-
 reading()
