@@ -22,4 +22,13 @@ unittest.main()
 
 ```
 
-## Failing Tests
+## Testing a Class
+- Python provides a number of assert methods in the unittest.TestCase class.
+| Method  | Use |
+| ------------- | ------------- |
+| assertEqual(a,b)  | verify that a == b |
+| assertNotEqual(a,b)  | verify that a != b   |
+| assertTrue(x) | verify that x is True  |
+| assertFalse(x)) | verify that x is False  |
+| assertIn(item, list)  | Content Cell  |
+| assertNotIn(item, list)  | Content Cell  |
