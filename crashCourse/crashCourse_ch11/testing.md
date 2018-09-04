@@ -24,6 +24,7 @@ unittest.main()
 
 ## Testing a Class
 - Python provides a number of assert methods in the unittest.TestCase class.
+- Testing a class is similar to testing a function—much of your work involves testing the behavior of the methods in the class.
 
 | Method  | Use |
 | ------------- | ------------- |
@@ -34,9 +35,4 @@ unittest.main()
 | assertIn(item, list) | verify that item is in List |
 | assertNotIn(item, list) | verify that item is not in list |
 
-
-
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+## Setup Method
