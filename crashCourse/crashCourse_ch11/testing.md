@@ -36,3 +36,26 @@ unittest.main()
 | assertNotIn(item, list) | verify that item is not in list |
 
 ## Setup Method
+- setUp() method allows you to create these objects once and then use them in each of your test methods.
+- Python runs the setUp() method before running each method starting with test_. Any objects created in the setUp() method are then available in each test method you write.
+```
+class TestAnonSurvey(unittest.TestCase):
+
+    def setUp(self):
+        question = "what language did you first learn to code in?"
+        self.my_survey = anonSurvey(question)
+        self.responses = ["JavaScript", "Python", "Ruby"]
+
+    def test_store_single_res(self):
+        self.my_survey.store_res(self.responses[0])
+        self.assertIn(self.responses[0], self.my_survey.responses)
+
+    def test_store_multi_res(self):
+        for response in self.responses:
+            self.my_survey.store_res(response)
+        for response in self.responses:
+            self.assertIn(response, self.my_survey.responses)
+
+unittest.main()
+
+```
