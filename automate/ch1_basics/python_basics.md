@@ -3,7 +3,7 @@
 ## Operators
 
 | Operator  | Operation | Ex | Output
-| ------------- | ------------- |
+| ------------- | ------------- | --- | --- |
 | ** | Exponent | 2 ** 3 | 8 |
 | % | Modulus/remainder | 22 % 8 | 6 |
 | // | integer div/floored quotient | 22 // 8 | 2 |
