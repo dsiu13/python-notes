@@ -52,15 +52,15 @@ def spam(div)
 
 # Practice Questions
 1. Why are functions advantageous to have in your programs?
-- Organize your code, prevent variables from interfering with one another, easier to debug, cleaner code.
+- Organize your code, prevent variables from interfering with one another, easier to debug, cleaner code. Reduce duplicate code. D.R.Y
 2. When does the code in a function execute: when the function is defined or when the function is called?
 - When its called.
 3. What statement creates a function?
-- def function_name
+- def statement
 4. What is the difference between a function and a function call?
 - A function is a code container. The call invokes the function and tells it to run.
 5. How many global scopes are there in a Python program? How many local scopes?
-- One global. One local per function instance
+- One global. local scope during function call
 6. What happens to variables in a local scope when the function call returns?
 - They are forgotten.
 7. What is a return value? Can a return value be part of an expression?
@@ -68,7 +68,8 @@ def spam(div)
 8. If a function does not have a return statement, what is the return value of a call to that function?
 - None
 9. How can you force a variable in a function to refer to the global variable?
-- Call the variable, and don't create an instance of the variable with the same name in the local scope
+- A global statement will force a variable in a function to refer to the
+global variable.
 10. What is the data type of None?
 - NoneType
 11. What does the import areallyourpetsnamederic statement do?
