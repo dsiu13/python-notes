@@ -60,3 +60,40 @@ size, color, disposition = cat
 - spam = ['hello', 'hi', 'howdy', 'heyas'] => spam.index('hello') => 0
 - You can add values with append() and insert(), and you can remove with remove()
 - sort() method, to sort a list
+
+## List-like types: Strings and Tuples
+- Lists aren’t the only data types that represent ordered sequences of values.
+- Lists and strings are different in an important way.
+- A list value is a mutable data type: It can have values added, removed, or changed. However, a string is immutable: It cannot be changed.
+- Tuples use () instead of [], it is immutable and cannot have its value changed, appended, or removed.
+- f you have only one value in your tuple, you can indicate this by placing a trailing comma after the value inside the parentheses. ('hello',))
+- A benefit of using tuples instead of lists is that, because they are immutable and their contents don’t change, Python can implement some optimizations that make code using tuples slightly faster than code using lists. Also its indicates this value is meant to never change to other looking at your code
+
+## Converting Types with the list() and tuple() Functions
+- the functions list() and tuple() will return list and tuple versions
+of the values passed to them. tuple(['cat', 'dog', 5]) => ('cat', 'dog', 5)
+
+## References
+- When you assign a list to a variable, you are actually assigning a list reference to the variable. A reference is a value that points to some bit of data, and a list reference is a value that points to a list.
+
+## Passing References
+- When a function is called, the values of the arguments are copied to the parameter variables.
+```
+def eggs(someParameter):
+    someParameter.append('Hello')
+spam = [1, 2, 3]
+eggs(spam)
+print(spam)
+
+```
+
+## copy() and deepcopy()
+- You can use copy() to make a duplicate copy of a mutable value like a list or dictionary, not just a copy of a reference.
+- If the list you need to copy contains lists, then use the copy.deepcopy() function instead of copy.copy(). The deepcopy() function will copy these inner lists as well.
+
+
+# Summary
+- Lists are useful data types since they allow you to write code that works on a modifiable number of values in a single variable.
+- Lists are mutable, meaning that their contents can change. Tuples and strings, although list-like in some respects, are immutable and cannot be changed.
+- A variable that contains a tuple or string value can be overwritten with a new tuple or string value, but this is not the same thing as modifying the existing value
+- Variables do not store list values directly; they store references to lists. This is an important distinction when copying variables or passing lists as arguments in function calls.
