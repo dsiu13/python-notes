@@ -109,7 +109,7 @@ picnic_basket = {'apples': 5, 'cups': 2}
 ## setdefault() Method
 - You’ll often have to set a value in a dictionary for a certain key only if that key does not already have a value.
 - setdefault() takes two arguments.
-- The first argument passed is the key to check for, and the secondis the value to set at that key if the key doesn't exist.
+- The first argument passed is the key to check for, and the second is the value to set at that key if the key doesn't exist.
 - If the key does exist it returns the key's value.
 ```
 picnic_basket = {'apples': 5, 'cups': 2}
@@ -123,4 +123,15 @@ if 'water' not in picnic_basket:
 - The pprint.pprint() function is especially helpful when the dictionary itself contains nested lists or dictionaries.
 
 # Data Structures to Model Real-World Things
--
+- You can data to model real-world things. and you can write code to work with this model. This is where lists and dictionaries can come in.
+
+# Nested Dictionaries and Lists
+-  Lists are useful to contain an ordered series of values, and dictionaries are useful for associating keys with values.
+
+
+# Summary
+Lists and dictionariesare values that can contain multiple values, including other lists and dictionaries. 
+- Dictionaries are useful because you can map one item (the key) to another (the value), as opposed to lists, which simply contain a series
+of values in order.
+- Values inside a dictionary are accessed using square brackets just as with lists. Instead of an integer index, dictionaries can have keys of a variety of data types: integers, floats, strings, or tuples.
+- By organizing a program’s values into data structures, you can create representations of real-world objects
