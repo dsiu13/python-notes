@@ -59,3 +59,10 @@ and is not blank.
 - **split()** is called on a string value and returns a list of strings.
 
 ## Justifying Text with rjust(), ljust(), and center()
+- **center()**, **rjust()** and **ljust()** string methods return a padded version of the string they are called on, with spaces inserted to justify the text.
+- These methods are especially useful when you need to print tabular data that has the correct spacing.
+
+## Removing Whitespace with strip(), rstrip(), and lstrip()
+- **strip()** string method will return a new string without any whitespace
+- The lstrip() and rstrip() methods will remove whitespace characters from the left and right ends
+- Passing strip() an argument will cause it replace string with the passed argument
