@@ -130,8 +130,27 @@ if 'water' not in picnic_basket:
 
 
 # Summary
-Lists and dictionariesare values that can contain multiple values, including other lists and dictionaries. 
+Lists and dictionaries are values that can contain multiple values, including other lists and dictionaries.
 - Dictionaries are useful because you can map one item (the key) to another (the value), as opposed to lists, which simply contain a series
 of values in order.
 - Values inside a dictionary are accessed using square brackets just as with lists. Instead of an integer index, dictionaries can have keys of a variety of data types: integers, floats, strings, or tuples.
 - By organizing a program’s values into data structures, you can create representations of real-world objects
+
+1. What does the code for an empty dictionary look like?
+- {}
+
+2. What does a dictionary value with a key 'foo' and a value 42 look like?
+- {'foo': 42}
+
+3. What is the main difference between a dictionary and a list?
+- dictionaries use key/values pairs
+- lists are ordered, dictionaries are not.
+- you can grab elements via their index in lists, where as in a dictionary you use key value
+
+4. What happens if you try to access spam['foo'] if spam is {'bar': 100}?
+
+5. If a dictionary is stored in spam, what is the difference between the expressions 'cat' in spam and 'cat' in spam.keys()?
+
+6. If a dictionary is stored in spam, what is the difference between the expressions 'cat' in spam and 'cat' in spam.values()?
+
+7. What is a shortcut for the following code?
